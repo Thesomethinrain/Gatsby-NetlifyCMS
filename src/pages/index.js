@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import Img from 'gatsby-image'
 
 import Layout from "../components/layout"
 import Image from "../components/image"
@@ -18,6 +19,7 @@ const IndexPage = ({data}) => (
           </span>
         </h3>
         <p>{node.excerpt}</p>
+
       </div>
     ))}
     <Link to="/about/">A propos</Link>
@@ -27,7 +29,7 @@ const IndexPage = ({data}) => (
 export default IndexPage
 
 export const query = graphql`
-  query {
+  query Test {
     allMarkdownRemark {
       totalCount
       edges {
@@ -41,5 +43,8 @@ export const query = graphql`
         }
       }
     }
+
+
+
   }
 `
